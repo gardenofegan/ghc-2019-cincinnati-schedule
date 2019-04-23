@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Schedule />
+    <Schedule favorites />
   </div>
 </template>
 
