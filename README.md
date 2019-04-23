@@ -1,4 +1,6 @@
-# homeschool-schedule-cincy
+# GHC 2019 Cincinnati Schedule
+
+A Basic Vue app to set your desired schedule of courses to go to for the 2019 GHC convention in Cincinnati
 
 ## Project setup
 ```
