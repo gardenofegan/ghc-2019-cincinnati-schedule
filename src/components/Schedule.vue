@@ -35,6 +35,9 @@
                 </v-list-tile>
                 <v-divider v-if="courseIndex + 1 < courseTime.courses.length && checkOnFavorite(course)" :key="courseIndex"></v-divider>
               </template>
+              <v-list-tile v-if="!checkIfAnySelected(courseTime.courses).length && favorites">
+                <v-list-tile-title>NO CLASSES FAVORITED</v-list-tile-title>
+              </v-list-tile>
             </v-list>
           </template>
         </div>
@@ -88,6 +91,18 @@ export default {
       } else {
         return theCourse.selected
       }
+    },
+    checkIfAnySelected (courses) {
+      const anyCoursesChecked = courses.filter(function (course) {
+        if (!course.selectable) {
+          return true
+        } else if (course.selected) {
+          return true
+        } else {
+          return false
+        }
+      })
+      return anyCoursesChecked || []
     }
   }
 }
